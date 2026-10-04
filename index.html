@@ -134,7 +134,7 @@
       <p class="lead" data-i18n="lead">Who to pick, who to ban and what to build, right on top of Dota 2.</p>
       <div class="cta">
         <a class="btn" href="https://github.com/vshtykhnov/outdraft-downloads/releases/latest/download/Outdraft.exe" data-i18n="download">⬇ Download for Windows</a>
-        <span class="sub"><span id="ver"></span><span data-i18n="noInstall">no install needed</span></span>
+        <span class="sub"><span data-i18n="noInstall">no install needed</span></span>
       </div>
     </div>
     <div class="shot" aria-hidden="true">
@@ -167,7 +167,7 @@
   <h2 data-i18n="startTitle">Start in a minute</h2>
   <div class="grid3 steps">
     <div class="card"><h3 data-i18n="s1t">Download</h3><p data-i18n="s1">One file, no install.</p></div>
-    <div class="card"><h3 data-i18n="s2t">Run it</h3><p data-i18n="s2">Keep Dota in borderless window mode.</p></div>
+    <div class="card"><h3 data-i18n="s2t">Run it</h3><p data-i18n="s2">Dota in borderless window.</p></div>
     <div class="card"><h3 data-i18n="s3t">Find a match</h3><p data-i18n="s3">Suggestions appear at hero selection.</p></div>
   </div>
 </div></section>
@@ -187,10 +187,9 @@
 <section id="privacy"><div class="wrap">
   <h2 data-i18n="privTitle">Privacy</h2>
   <div class="card privacy"><ul>
-    <li data-i18n="p1"><b>Anonymous stats only.</b> No IP, Steam account or screenshots. You can turn them off in the app.</li>
-    <li data-i18n="p2"><b>The screen stays on your PC.</b> Nothing is saved or sent.</li>
-    <li data-i18n="p3"><b>Bans tab:</b> if you add your account, our server keeps your public STRATZ stats.</li>
-    <li data-i18n="p4"><b>Crash reports</b> are sent without your folder paths.</li>
+    <li data-i18n="p1">Anonymous stats only, can be turned off.</li>
+    <li data-i18n="p2">Screenshots never leave your PC.</li>
+    <li data-i18n="p3">For bans we keep your public STRATZ stats.</li>
   </ul></div>
 </div></section>
 
@@ -214,7 +213,7 @@ const RU = {
   f3t: "Билд в игре", f3: "Навыки, таланты и предметы в компактной панели.",
   startTitle: "Начать за минуту",
   s1t: "Скачай", s1: "Один файл, без установки.",
-  s2t: "Запусти", s2: "Dota — в режиме «окно без рамки».",
+  s2t: "Запусти", s2: "Dota в окне без рамки.",
   s3t: "Найди матч", s3: "Подсказки появятся на выборе героев.",
   q1: "Windows пишет, что защитила компьютер?",
   a1: "Это нормально: у программы пока нет цифровой подписи. Нажми <b>Подробнее</b>, затем <b>Выполнить в любом случае</b>.",
@@ -222,10 +221,9 @@ const RU = {
   a2: "Outdraft не трогает память и файлы игры. Он только смотрит на экран и использует официальную Game State Integration от Dota.",
   q5: "Это бесплатно?", a5: "Да, пока идёт бета.",
   privTitle: "Конфиденциальность",
-  p1: "<b>Только анонимная статистика.</b> Без IP, Steam-аккаунта и скриншотов. Отключается в программе.",
-  p2: "<b>Экран остаётся на твоём ПК.</b> Ничего не сохраняется и не отправляется.",
-  p3: "<b>Вкладка банов:</b> если добавишь аккаунт, сервер хранит твою публичную статистику из STRATZ.",
-  p4: "<b>Отчёты об ошибках</b> отправляются без путей к твоим папкам.",
+  p1: "Только анонимная статистика, можно отключить.",
+  p2: "Скриншоты не покидают твой ПК.",
+  p3: "Для банов храним твою публичную статистику STRATZ.",
   foot: "© 2026 Outdraft · Не связан с Valve", feedback: "Обратная связь", releases: "Все версии",
 };
 const EN = {};
@@ -249,10 +247,6 @@ const asked = new URLSearchParams(location.search).get("lang");
 setLang([asked, saved].find(l => l === "en" || l === "ru") ||
         ((navigator.language || "").toLowerCase().startsWith("ru") ? "ru" : "en"));
 
-fetch("https://api.github.com/repos/vshtykhnov/outdraft-downloads/releases/latest")
-  .then(r => r.ok ? r.json() : null)
-  .then(r => { if (r && r.tag_name) document.getElementById("ver").textContent = r.tag_name + " · "; })
-  .catch(() => {});
 </script>
 </body>
 </html>
