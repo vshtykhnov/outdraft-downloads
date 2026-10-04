@@ -1,6 +1,8 @@
 # Outdraft for Windows
 
-Download the latest [Outdraft.exe](https://github.com/vshtykhnov/outdraft-downloads/releases/latest/download/Outdraft.exe) from GitHub Releases. Current release: [v0.1.4](https://github.com/vshtykhnov/outdraft-downloads/releases/tag/v0.1.4).
+Website: [vshtykhnov.github.io/outdraft-downloads](https://vshtykhnov.github.io/outdraft-downloads/)
+
+Download the latest [Outdraft.exe](https://github.com/vshtykhnov/outdraft-downloads/releases/latest/download/Outdraft.exe) from GitHub Releases.
 
 Run it on Windows while Dota 2 is in borderless window or windowed mode. Restart Dota 2 once after the first run so it loads the overlay integration.
 
