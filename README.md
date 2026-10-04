@@ -1,6 +1,6 @@
 # Outdraft for Windows
 
-Website: [vshtykhnov.github.io/outdraft-downloads](https://vshtykhnov.github.io/outdraft-downloads/)
+Website: [outdraft.org](https://outdraft.org)
 
 Download the latest [Outdraft.exe](https://github.com/vshtykhnov/outdraft-downloads/releases/latest/download/Outdraft.exe) from GitHub Releases.
 
