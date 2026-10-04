@@ -70,7 +70,7 @@
   .float b { color: var(--r); }
 
   section { padding: 64px 0; border-top: 1px solid #141b24; scroll-margin-top: 8px; }
-  h2 { font-size: 30px; margin: 0 0 8px; letter-spacing: -.5px; }
+  h2 { font-size: 30px; margin: 0 0 24px; letter-spacing: -.5px; }
   .muted { color: var(--muted); margin: 0 0 32px; }
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
@@ -91,18 +91,29 @@
   .ss { margin-top: 12px; border: 1px solid #2a4f7a; background: #0e2240; border-radius: 8px; padding: 14px; font-size: 13px; color: #c8dcf5; }
   .ss b { display: block; font-size: 15px; margin-bottom: 4px; color: #fff; }
 
-  .privacy { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .privacy .card p + p { margin-top: 8px; }
+  .privacy ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .privacy li { color: var(--muted); padding-left: 22px; position: relative; }
+  .privacy li::before { content: "✓"; position: absolute; left: 0; color: var(--r); font-weight: 700; }
+  .privacy li b { color: var(--text); font-weight: 600; }
 
   footer { padding: 32px 0 48px; border-top: 1px solid #141b24; color: var(--muted); font-size: 14px;
            display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   footer .links { display: flex; }
   @media (max-width: 820px) {
-    .hero { grid-template-columns: 1fr; padding-top: 24px; }
-    h1 { font-size: 38px; }
-    .grid3, .privacy { grid-template-columns: 1fr; }
+    .wrap { padding: 0 16px; }
+    .hero { grid-template-columns: 1fr; gap: 32px; padding: 16px 0 48px; }
+    h1 { font-size: 34px; letter-spacing: -1px; }
+    .lead { font-size: 16px; margin-bottom: 22px; }
+    .cta { flex-direction: column; align-items: stretch; text-align: center; }
+    .btn { justify-content: center; }
+    .shot { padding: 12px; }
+    .float { position: static; margin-top: 10px; box-shadow: none; text-align: center; }
+    section { padding: 44px 0; }
+    h2 { font-size: 24px; margin-bottom: 20px; }
+    .grid3 { grid-template-columns: 1fr; gap: 10px; }
+    .card { padding: 16px; }
     .top .links { display: none; }
-    .float { right: 8px; }
+    footer { flex-direction: column; }
   }
 </style>
 </head>
@@ -120,7 +131,7 @@
     <div>
       <span class="tag" data-i18n="tag">Free beta · Windows</span>
       <h1 data-i18n="title">Win the draft <span class="r">before</span> the game <span class="d">starts</span></h1>
-      <p class="lead" data-i18n="lead">Outdraft sits on top of Dota 2 and follows the picks. It tells you who to pick and who to ban, then shows your hero's build in the game. All from the last four weeks of matches.</p>
+      <p class="lead" data-i18n="lead">Who to pick, who to ban and what to build, right on top of Dota 2.</p>
       <div class="cta">
         <a class="btn" href="https://github.com/vshtykhnov/outdraft-downloads/releases/latest/download/Outdraft.exe" data-i18n="download">⬇ Download for Windows</a>
         <span class="sub"><span id="ver"></span><span data-i18n="noInstall">no install needed</span></span>
@@ -145,50 +156,42 @@
 
 <section id="features"><div class="wrap">
   <h2 data-i18n="featTitle">Everything in one overlay</h2>
-  <p class="muted" data-i18n="featSub">No alt-tab, no second monitor. It shows up when you need it and gets out of the way in game.</p>
   <div class="grid3">
-    <div class="card"><div class="ic g">▲</div><h3 data-i18n="f1t">Pick suggestions</h3><p data-i18n="f1">Ranked for your role against the enemy team and with your allies, updated with every pick.</p></div>
-    <div class="card"><div class="ic rd">✕</div><h3 data-i18n="f2t">Bans for your pool</h3><p data-i18n="f2">Add your account and get bans aimed at the heroes that beat what you actually play.</p></div>
-    <div class="card"><div class="ic b">◆</div><h3 data-i18n="f3t">Build in game</h3><p data-i18n="f3">Skills, talents and items by phase in a compact panel that stays out of your way.</p></div>
+    <div class="card"><div class="ic g">▲</div><h3 data-i18n="f1t">Pick suggestions</h3><p data-i18n="f1">For your role, updated with every pick.</p></div>
+    <div class="card"><div class="ic rd">✕</div><h3 data-i18n="f2t">Bans for your pool</h3><p data-i18n="f2">Against the heroes that beat what you play.</p></div>
+    <div class="card"><div class="ic b">◆</div><h3 data-i18n="f3t">Build in game</h3><p data-i18n="f3">Skills, talents and items in a compact panel.</p></div>
   </div>
 </div></section>
 
 <section id="start"><div class="wrap">
   <h2 data-i18n="startTitle">Start in a minute</h2>
-  <p class="muted" data-i18n="startSub">Nothing to install or configure.</p>
   <div class="grid3 steps">
-    <div class="card"><h3 data-i18n="s1t">Download</h3><p data-i18n="s1">One file, Outdraft.exe. Put it anywhere.</p></div>
-    <div class="card"><h3 data-i18n="s2t">Run it</h3><p data-i18n="s2">It connects to Dota 2 by itself. Restart Dota once if it was already open. Dota should run in borderless window or windowed mode.</p></div>
-    <div class="card"><h3 data-i18n="s3t">Find a match</h3><p data-i18n="s3">Suggestions appear as soon as hero selection starts.</p></div>
+    <div class="card"><h3 data-i18n="s1t">Download</h3><p data-i18n="s1">One file, no install.</p></div>
+    <div class="card"><h3 data-i18n="s2t">Run it</h3><p data-i18n="s2">Keep Dota in borderless window mode.</p></div>
+    <div class="card"><h3 data-i18n="s3t">Find a match</h3><p data-i18n="s3">Suggestions appear at hero selection.</p></div>
   </div>
 </div></section>
 
 <section id="faq"><div class="wrap">
   <h2>FAQ</h2>
-  <p class="muted" data-i18n="faqSub">The honest answers.</p>
-  <details open><summary data-i18n="q1">Windows says it protected my PC. Is that normal?</summary>
-    <p data-i18n="a1">Yes. Outdraft is a new app and isn't code-signed yet, so Windows shows this, as it does for many small tools. Click <b>More info</b>, then <b>Run anyway</b>.</p>
+  <details open><summary data-i18n="q1">Windows says it protected my PC?</summary>
+    <p data-i18n="a1">That's normal, the app isn't code-signed yet. Click <b>More info</b>, then <b>Run anyway</b>.</p>
     <div class="ss"><b>Windows protected your PC</b>Microsoft Defender SmartScreen prevented an unrecognized app from starting… <u>More info</u></div>
   </details>
   <details><summary data-i18n="q2">Is it safe for my account?</summary>
-    <p data-i18n="a2">Outdraft never touches the game's memory or files and never sends input to the game. During the draft it looks at the hero portraits on your screen, and it learns the game stage from Dota's official Game State Integration.</p></details>
-  <details><summary data-i18n="q3">Why borderless window mode?</summary>
-    <p data-i18n="a3">The overlay is a normal window on top of the game. In exclusive fullscreen Windows can hide it, and the draft can't be seen. Switch Dota to borderless window in its video settings.</p></details>
-  <details><summary data-i18n="q4">What does it collect?</summary>
-    <p data-i18n="a4">Anonymous usage stats only, and you can turn them off in the app. Details are in Privacy below.</p></details>
+    <p data-i18n="a2">It never touches the game's memory or files. It only looks at the screen and uses Dota's official Game State Integration.</p></details>
   <details><summary data-i18n="q5">Is it free?</summary>
-    <p data-i18n="a5">Yes, during the beta. Tell us what you think through the <a href="https://tally.so/r/D4lK4E">feedback form</a>.</p></details>
+    <p data-i18n="a5">Yes, during the beta.</p></details>
 </div></section>
 
 <section id="privacy"><div class="wrap">
   <h2 data-i18n="privTitle">Privacy</h2>
-  <p class="muted" data-i18n="privSub">What leaves your PC, and what doesn't.</p>
-  <div class="privacy">
-    <div class="card"><h3 data-i18n="p1t">Usage stats</h3><p data-i18n="p1">App starts, recognized drafts, opened builds, errors, app and Windows version, screen size and a random install ID. Sent to PostHog on EU servers, without your IP address. Never your Steam account, heroes, names or screenshots.</p><p data-i18n="p1b">Turn it off with <b>Usage stats</b> at the bottom of the app.</p></div>
-    <div class="card"><h3 data-i18n="p2t">Screen</h3><p data-i18n="p2">The draft is read on your PC. Screenshots are never saved or sent anywhere.</p></div>
-    <div class="card"><h3 data-i18n="p3t">Bans tab</h3><p data-i18n="p3">Only if you add your Steam account: our server loads your public profile and hero stats from STRATZ to suggest bans, and keeps a cached copy. <b>Clear</b> removes the account from your PC.</p></div>
-    <div class="card"><h3 data-i18n="p4t">Crash reports</h3><p data-i18n="p4">If the app crashes, the error text is sent to our server so we can fix it. Folder paths with your user name are removed first.</p></div>
-  </div>
+  <div class="card privacy"><ul>
+    <li data-i18n="p1"><b>Anonymous stats only.</b> No IP, Steam account or screenshots. You can turn them off in the app.</li>
+    <li data-i18n="p2"><b>The screen stays on your PC.</b> Nothing is saved or sent.</li>
+    <li data-i18n="p3"><b>Bans tab:</b> if you add your account, our server keeps your public STRATZ stats.</li>
+    <li data-i18n="p4"><b>Crash reports</b> are sent without your folder paths.</li>
+  </ul></div>
 </div></section>
 
 <div class="wrap">
@@ -202,36 +205,27 @@ const RU = {
   navFeatures: "Возможности", navStart: "Как начать", navFaq: "Вопросы",
   tag: "Бесплатная бета · Windows",
   title: 'Выиграй драфт <span class="r">до</span> начала <span class="d">игры</span>',
-  lead: "Outdraft работает поверх Dota 2 и следит за пиками. Подсказывает, кого брать и кого банить, а в игре показывает билд твоего героя. Всё по матчам за последние четыре недели.",
+  lead: "Кого брать, кого банить и что собирать — прямо поверх Dota 2.",
   download: "⬇ Скачать для Windows", noInstall: "без установки",
   bestPick: "Лучший пик:",
   featTitle: "Всё в одном оверлее",
-  featSub: "Без alt-tab и второго монитора. Появляется, когда нужен, и не мешает в игре.",
-  f1t: "Подсказки на драфте", f1: "Герои для твоей роли с учётом врагов и союзников. Обновляются после каждого пика.",
-  f2t: "Баны под твой пул", f2: "Добавь свой аккаунт и получи баны против героев, которые бьют то, на чём ты играешь.",
-  f3t: "Билд в игре", f3: "Навыки, таланты и предметы по стадиям игры в компактной панели, которая не мешает.",
-  startTitle: "Начать за минуту", startSub: "Ничего не нужно устанавливать и настраивать.",
-  s1t: "Скачай", s1: "Один файл, Outdraft.exe. Положи куда угодно.",
-  s2t: "Запусти", s2: "Он сам подключится к Dota 2. Если Dota уже была открыта, перезапусти её один раз. Dota должна работать в оконном режиме или в окне без рамки.",
-  s3t: "Найди матч", s3: "Подсказки появятся, как только начнётся выбор героев.",
-  faqSub: "Честные ответы.",
-  q1: "Windows пишет, что защитила компьютер. Это нормально?",
-  a1: "Да. Outdraft — новая программа, и у неё пока нет цифровой подписи, поэтому Windows так предупреждает, как и для многих небольших программ. Нажми <b>Подробнее</b>, затем <b>Выполнить в любом случае</b>.",
+  f1t: "Подсказки на драфте", f1: "Под твою роль, после каждого пика.",
+  f2t: "Баны под твой пул", f2: "Против героев, которые бьют твоих.",
+  f3t: "Билд в игре", f3: "Навыки, таланты и предметы в компактной панели.",
+  startTitle: "Начать за минуту",
+  s1t: "Скачай", s1: "Один файл, без установки.",
+  s2t: "Запусти", s2: "Dota — в режиме «окно без рамки».",
+  s3t: "Найди матч", s3: "Подсказки появятся на выборе героев.",
+  q1: "Windows пишет, что защитила компьютер?",
+  a1: "Это нормально: у программы пока нет цифровой подписи. Нажми <b>Подробнее</b>, затем <b>Выполнить в любом случае</b>.",
   q2: "Это безопасно для аккаунта?",
-  a2: "Outdraft не трогает память и файлы игры и ничего не отправляет в игру. Во время драфта он смотрит на портреты героев на экране, а стадию игры узнаёт через официальную Game State Integration от Dota.",
-  q3: "Зачем окно без рамки?",
-  a3: "Оверлей — обычное окно поверх игры. В полноэкранном режиме Windows может его скрыть, а драфт не будет виден. Переключи Dota в «окно без рамки» в настройках видео.",
-  q4: "Что собирается?",
-  a4: "Только анонимная статистика использования, и её можно отключить в программе. Подробнее — в разделе «Конфиденциальность» ниже.",
-  q5: "Это бесплатно?",
-  a5: 'Да, пока идёт бета. Расскажи, что думаешь, через <a href="https://tally.so/r/D4lK4E">форму обратной связи</a>.',
-  privTitle: "Конфиденциальность", privSub: "Что уходит с твоего компьютера, а что нет.",
-  p1t: "Статистика использования",
-  p1: "Запуски программы, распознанные драфты, открытые билды, ошибки, версии Outdraft и Windows, разрешение экрана и случайный ID установки. Отправляется в PostHog на серверы в ЕС, без твоего IP-адреса. Никогда — твой Steam-аккаунт, герои, имена или скриншоты.",
-  p1b: "Отключается галочкой <b>Usage stats</b> внизу окна программы.",
-  p2t: "Экран", p2: "Драфт распознаётся на твоём компьютере. Скриншоты никуда не сохраняются и не отправляются.",
-  p3t: "Вкладка банов", p3: "Только если ты добавишь свой Steam-аккаунт: наш сервер загружает твой публичный профиль и статистику по героям из STRATZ, чтобы подобрать баны, и хранит их копию. <b>Clear</b> удаляет аккаунт с твоего компьютера.",
-  p4t: "Отчёты об ошибках", p4: "Если программа упадёт, текст ошибки отправится на наш сервер, чтобы мы её исправили. Пути к папкам с именем пользователя перед этим удаляются.",
+  a2: "Outdraft не трогает память и файлы игры. Он только смотрит на экран и использует официальную Game State Integration от Dota.",
+  q5: "Это бесплатно?", a5: "Да, пока идёт бета.",
+  privTitle: "Конфиденциальность",
+  p1: "<b>Только анонимная статистика.</b> Без IP, Steam-аккаунта и скриншотов. Отключается в программе.",
+  p2: "<b>Экран остаётся на твоём ПК.</b> Ничего не сохраняется и не отправляется.",
+  p3: "<b>Вкладка банов:</b> если добавишь аккаунт, сервер хранит твою публичную статистику из STRATZ.",
+  p4: "<b>Отчёты об ошибках</b> отправляются без путей к твоим папкам.",
   foot: "© 2026 Outdraft · Не связан с Valve", feedback: "Обратная связь", releases: "Все версии",
 };
 const EN = {};
