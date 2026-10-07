@@ -167,10 +167,14 @@
 
 <section id="features"><div class="wrap">
   <h2 data-i18n="featTitle">Everything in one overlay</h2>
+  <p class="lead" data-i18n="featLead">Every suggestion comes from thousands of matches of the last four weeks.</p>
   <div class="grid3">
-    <div class="card"><div class="ic g">▲</div><h3 data-i18n="f1t">Pick suggestions</h3><p data-i18n="f1">For your role, updated with every pick.</p></div>
-    <div class="card"><div class="ic rd">✕</div><h3 data-i18n="f2t">Bans for your pool</h3><p data-i18n="f2">Against the heroes that beat what you play.</p></div>
-    <div class="card"><div class="ic b">◆</div><h3 data-i18n="f3t">Build in game</h3><p data-i18n="f3">Skills, talents and items in a compact panel.</p></div>
+    <div class="card"><div class="ic g">▲</div><h3 data-i18n="f1t">Picks for the whole draft</h3><p data-i18n="f1">A hero for your role that counters the enemies and works with your allies.</p></div>
+    <div class="card"><div class="ic rd">✕</div><h3 data-i18n="f2t">Bans for your pool</h3><p data-i18n="f2">Takes away the heroes that beat what you play, so you're harder to counter.</p></div>
+    <div class="card"><div class="ic b">≡</div><h3 data-i18n="f4t">Lanes at a glance</h3><p data-i18n="f4">Which lane wins, which loses and where help is needed.</p></div>
+    <div class="card"><div class="ic g">⚖</div><h3 data-i18n="f5t">Who won the draft</h3><p data-i18n="f5">See if you outdrafted them. A big edge is a good game for Double Down.</p></div>
+    <div class="card"><div class="ic b">◆</div><h3 data-i18n="f3t">Items for these enemies</h3><p data-i18n="f3">The build adapts to the enemy lineup, with the minute to buy each item.</p></div>
+    <div class="card"><div class="ic rd">★</div><h3 data-i18n="f6t">Skills and talents</h3><p data-i18n="f6">What to max first and how often each talent wins.</p></div>
   </div>
 </div></section>
 
@@ -191,6 +195,8 @@
   </details>
   <details><summary data-i18n="q2">Can I get banned for using it?</summary>
     <p data-i18n="a2">No. Outdraft never reads or changes the game's memory or files. It only looks at the picks on screen and analyzes them, and gets your hero and items through Valve's official Game State Integration. It works the same way as Dota Plus hero suggestions, Overwolf overlays and the GSI lighting in SteelSeries and Logitech apps.</p></details>
+  <details><summary data-i18n="q3">How do I use it?</summary>
+    <p data-i18n="a3">Run Outdraft, then start Dota 2 in borderless window so the app can see the picks. Find a match: picks are recognized automatically and suggestions appear right away. Take the hero with the highest Score. That's it, no logins, passwords or permissions.</p></details>
   <details><summary data-i18n="q5">Is it free?</summary>
     <p data-i18n="a5">Yes, during the beta.</p></details>
 </div></section>
@@ -220,9 +226,13 @@ const RU = {
   bestPick: "Лучший пик:",
   demoTitle: "Как это выглядит в матче",
   featTitle: "Всё в одном оверлее",
-  f1t: "Подсказки на драфте", f1: "Под твою роль, после каждого пика.",
-  f2t: "Баны под твой пул", f2: "Против героев, которые бьют твоих.",
-  f3t: "Билд в игре", f3: "Навыки, таланты и предметы в компактной панели.",
+  featLead: "Все подсказки — по тысячам матчей за последние четыре недели.",
+  f1t: "Пик под весь драфт", f1: "Герой на твою роль, который контрит врагов и сочетается с союзниками.",
+  f2t: "Баны под твой пул", f2: "Убирают героев, которые бьют твоих, — тебя сложнее перепикать.",
+  f4t: "Расклад по линиям", f4: "Какая линия выигрывает, какая проигрывает и куда нужна помощь.",
+  f5t: "Кто выиграл драфт", f5: "Видно, перепикали ли вы врага. Большой перевес — повод поставить Double Down.",
+  f3t: "Предметы под врагов", f3: "Билд подстраивается под вражеский состав, с минутой покупки каждого предмета.",
+  f6t: "Навыки и таланты", f6: "Что качать первым и как часто побеждает каждый талант.",
   startTitle: "Начать за минуту",
   s1t: "Скачай", s1: "Один файл, без установки.",
   s2t: "Запусти", s2: "Dota в окне без рамки.",
@@ -231,6 +241,8 @@ const RU = {
   a1: "Это нормально: у программы пока нет цифровой подписи. Нажми <b>Подробнее</b>, затем <b>Выполнить в любом случае</b>.",
   q2: "За это могут забанить?",
   a2: "Нет. Outdraft не читает и не меняет память и файлы игры. Он только смотрит на пики на экране и анализирует их, а героя и предметы получает через официальную Game State Integration от Valve. Работает так же, как подсказки героев в Dota Plus, оверлеи Overwolf и подсветка через GSI в приложениях SteelSeries и Logitech.",
+  q3: "Как пользоваться?",
+  a3: "Запусти Outdraft, потом Dota 2 в окне без рамки — так программа видит пики. Найди матч: пики определятся сами, и сразу появятся подсказки. Бери героя с самым высоким Score. Больше ничего не нужно — ни логинов, ни паролей, ни доступов.",
   q5: "Это бесплатно?", a5: "Да, пока идёт бета.",
   privTitle: "Конфиденциальность",
   p1: "Только анонимная статистика, можно отключить.",
