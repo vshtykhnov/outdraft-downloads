@@ -70,6 +70,7 @@
            border-radius: 10px; padding: 10px 14px; font-size: 13px; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
   .float b { color: var(--r); }
 
+  .demo { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid var(--line); background: #000; }
   section { padding: 64px 0; border-top: 1px solid #141b24; scroll-margin-top: 8px; }
   h2 { font-size: 30px; margin: 0 0 24px; letter-spacing: -.5px; }
   .muted { color: var(--muted); margin: 0 0 32px; }
@@ -159,6 +160,11 @@
   </div>
 </div>
 
+<section id="demo"><div class="wrap">
+  <h2 data-i18n="demoTitle">See it in a real match</h2>
+  <video class="demo" src="media/demo.mp4" poster="media/demo.jpg" autoplay muted loop playsinline preload="metadata"></video>
+</div></section>
+
 <section id="features"><div class="wrap">
   <h2 data-i18n="featTitle">Everything in one overlay</h2>
   <div class="grid3">
@@ -183,8 +189,8 @@
     <p data-i18n="a1">That's normal, the app isn't code-signed yet. Click <b>More info</b>, then <b>Run anyway</b>.</p>
     <div class="ss"><b>Windows protected your PC</b>Microsoft Defender SmartScreen prevented an unrecognized app from starting… <u>More info</u></div>
   </details>
-  <details><summary data-i18n="q2">Is it safe for my account?</summary>
-    <p data-i18n="a2">It never touches the game's memory or files. It only looks at the screen and uses Dota's official Game State Integration.</p></details>
+  <details><summary data-i18n="q2">Can I get banned for using it?</summary>
+    <p data-i18n="a2">No. Outdraft never reads or changes the game's memory or files. It only looks at the picks on screen and analyzes them, and gets your hero and items through Valve's official Game State Integration. It works the same way as Dota Plus hero suggestions, Overwolf overlays and the GSI lighting in SteelSeries and Logitech apps.</p></details>
   <details><summary data-i18n="q5">Is it free?</summary>
     <p data-i18n="a5">Yes, during the beta.</p></details>
 </div></section>
@@ -212,6 +218,7 @@ const RU = {
   lead: "Кого брать, кого банить и что собирать — прямо поверх Dota 2.",
   download: "⬇ Скачать для Windows", noInstall: "без установки",
   bestPick: "Лучший пик:",
+  demoTitle: "Как это выглядит в матче",
   featTitle: "Всё в одном оверлее",
   f1t: "Подсказки на драфте", f1: "Под твою роль, после каждого пика.",
   f2t: "Баны под твой пул", f2: "Против героев, которые бьют твоих.",
@@ -222,8 +229,8 @@ const RU = {
   s3t: "Найди матч", s3: "Подсказки появятся на выборе героев.",
   q1: "Windows пишет, что защитила компьютер?",
   a1: "Это нормально: у программы пока нет цифровой подписи. Нажми <b>Подробнее</b>, затем <b>Выполнить в любом случае</b>.",
-  q2: "Это безопасно для аккаунта?",
-  a2: "Outdraft не трогает память и файлы игры. Он только смотрит на экран и использует официальную Game State Integration от Dota.",
+  q2: "За это могут забанить?",
+  a2: "Нет. Outdraft не читает и не меняет память и файлы игры. Он только смотрит на пики на экране и анализирует их, а героя и предметы получает через официальную Game State Integration от Valve. Работает так же, как подсказки героев в Dota Plus, оверлеи Overwolf и подсветка через GSI в приложениях SteelSeries и Logitech.",
   q5: "Это бесплатно?", a5: "Да, пока идёт бета.",
   privTitle: "Конфиденциальность",
   p1: "Только анонимная статистика, можно отключить.",
